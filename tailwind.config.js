@@ -1,7 +1,17 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  purge: [],
+  darkMode: false,
   theme: {
+    extend: {
+      colors: {
+        lime: colors.lime,
+      },
+    },
+  },
+  variants: {
     extend: {},
   },
   plugins: [],
-}
+};
