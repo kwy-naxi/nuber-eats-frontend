@@ -4,15 +4,18 @@ import { createRoot } from "react-dom/client";
 import { client } from "./apollo";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { HelmetProvider } from "react-helmet-async";
 import "./styles/styles.css";
 
-const container = document.getElementById('root');
+const container = document.getElementById("root");
 const root = createRoot(container!);
 
 root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
     </ApolloProvider>
   </React.StrictMode>
 );

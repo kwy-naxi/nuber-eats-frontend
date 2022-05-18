@@ -1,15 +1,16 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Header } from "../components/header";
 import { CreateAccount } from "../pages/create-account";
 import { Login } from "../pages/login";
 
 export const LoggedOutRouter = () => {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/create-account" element={<CreateAccount />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/register" element={<CreateAccount />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 };
