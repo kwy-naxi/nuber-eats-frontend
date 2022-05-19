@@ -6,12 +6,14 @@ import Loading from "../components/Loading";
 import { useMe } from "../hooks/useMe";
 import { NotFound } from "../pages/404";
 import { Restaurants } from "../pages/client/restaurants";
+import { Search } from "../pages/client/search";
 import { ConfirmEmail } from "../pages/user/confirm-email";
 import { EditProfile } from "../pages/user/edit-profile";
 
 const CommonRoutes = [
   { path: "confirm", element: <ConfirmEmail /> },
-  { path: "editProfile", element: <EditProfile /> },
+  { path: "edit-profile", element: <EditProfile /> },
+  { path: "search", element: <Search /> },
 ];
 
 const ClientRoutes = [{ path: "", element: <Restaurants /> }];
