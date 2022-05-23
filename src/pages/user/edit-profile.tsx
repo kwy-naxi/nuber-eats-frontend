@@ -1,6 +1,6 @@
 import { gql, useApolloClient, useMutation } from "@apollo/client";
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { Button } from "../../components/button";
 import { useMe } from "../../hooks/useMe";
@@ -62,7 +62,7 @@ export const EditProfile = () => {
     register,
     handleSubmit,
     getValues,
-    formState: { isValid, errors },
+    formState: { isValid },
   } = useForm<IFormProps>({
     mode: "onChange",
     defaultValues: {
@@ -95,7 +95,7 @@ export const EditProfile = () => {
             pattern: {
               message: "not email pattern",
               value:
-                /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
             },
           })}
           className="input"

@@ -29,11 +29,10 @@ interface CustomizedState {
 
 export const Search = () => {
   const location = useLocation();
-  const state = location.state as CustomizedState;
-  const { searchTerm } = state;
-
+  const { searchTerm } = location.state as CustomizedState;
   const navigate = useNavigate();
-  const [queryReadyToStart, { loading, data, called }] = useLazyQuery<
+
+  const [callQuery, { loading, data, called }] = useLazyQuery<
     searchRestaurant,
     searchRestaurantVariables
   >(SEARCH_RESTAURANT);
@@ -41,7 +40,7 @@ export const Search = () => {
     if (!searchTerm) {
       return navigate("/", { replace: true });
     }
-    queryReadyToStart({
+    callQuery({
       variables: {
         input: {
           page: 1,
@@ -49,7 +48,7 @@ export const Search = () => {
         },
       },
     });
-  }, [navigate, location]);
+  }, [navigate, searchTerm]);
   console.log(loading, data, called);
   return (
     <div>

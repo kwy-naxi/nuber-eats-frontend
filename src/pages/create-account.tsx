@@ -133,7 +133,7 @@ export const CreateAccount = () => {
         </form>
         <div>
           Already have an account?{" "}
-          <Link to="/" className="text-lime-600 hover:underline">
+          <Link to="/login" className="text-lime-600 hover:underline">
             Log in now
           </Link>
         </div>

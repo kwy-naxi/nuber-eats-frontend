@@ -33,12 +33,12 @@ export const Login = () => {
   const {
     register,
     getValues,
-    formState: { isValid },
-    formState: { errors },
+    formState: { isValid, errors },
     handleSubmit,
   } = useForm<ILoginForm>({
     mode: "onBlur",
   });
+
   const onCompleted = (data: loginMutation) => {
     const {
       login: { ok, token },
@@ -122,7 +122,7 @@ export const Login = () => {
         </form>
         <div>
           New to Nuber?{" "}
-          <Link to="/" className="text-lime-600 hover:underline">
+          <Link to="/register" className="text-lime-600 hover:underline">
             Create an Account
           </Link>
         </div>
