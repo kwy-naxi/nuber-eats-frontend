@@ -1,7 +1,7 @@
 import { gql, useMutation } from "@apollo/client";
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import { useForm, useFormState } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Button } from "../../components/button";
 import {
   createRestaurant,
@@ -31,7 +31,7 @@ export const AddRestaurant = () => {
   const {
     register,
     getValues,
-    formState: { isValid, errors },
+    formState: { isValid },
     handleSubmit,
   } = useForm<IFormProps>({
     mode: "onChange",
