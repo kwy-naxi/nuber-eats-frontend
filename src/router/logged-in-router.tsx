@@ -9,9 +9,11 @@ import { Restaurant } from "../pages/client/restaurant";
 import { Restaurants } from "../pages/client/restaurants";
 import { Search } from "../pages/client/search";
 import { AddRestaurant } from "../pages/owner/add-restaurants";
+import { MyRestaurant } from "../pages/owner/my-restaurant";
 import { MyRestaurants } from "../pages/owner/my-restaurants";
 import { ConfirmEmail } from "../pages/user/confirm-email";
 import { EditProfile } from "../pages/user/edit-profile";
+import { AddDish } from "../pages/owner/add-dish";
 
 const CommonRoutes = [
   { path: "confirm", element: <ConfirmEmail /> },
@@ -22,12 +24,14 @@ const ClientRoutes = [
   { path: "", element: <Restaurants /> },
   { path: "search", element: <Search /> },
   { path: "category/:slug", element: <Category /> },
-  { path: "restaurant/:id", element: <Restaurant /> },
+  { path: "restaurants/:id", element: <Restaurant /> },
 ];
 
 const restaurantRoutes = [
   { path: "", element: <MyRestaurants /> },
   { path: "add-restaurant", element: <AddRestaurant /> },
+  { path: "restaurants/:id", element: <MyRestaurant /> },
+  { path: "restaurants/:id/add-dish", element: <AddDish /> },
 ];
 
 //const OwnerRoutes = [{ path: "", element: <Restaurants /> }];
